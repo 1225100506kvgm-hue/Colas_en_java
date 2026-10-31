@@ -44,4 +44,22 @@ public class ColaEnlazada<T> {
         }
         return frente.dato;
     }
+
+     public void imprimirCola() {
+        Nodo<T> actual = frente;
+        StringBuilder sb = new StringBuilder("Frente -> ");
+        while (actual != null) {
+            sb.append(actual.dato);
+            if (actual.siguiente != null) sb.append(" | ");
+            actual = actual.siguiente;
+        }
+        System.out.println(sb + " <- Fin");
+    }
+
+    public void vaciar() {
+        frente = null;
+        fin = null;
+        tamanio = 0;
+    }
 }
+
